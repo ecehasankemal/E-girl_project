@@ -1,3 +1,7 @@
+
+                    GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
 #include "e_girl.h"
 
 size_t	ft_strlen(const char *str)
