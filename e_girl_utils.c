@@ -1,6 +1,6 @@
 
-                    GNU GENERAL PUBLIC LICENSE
-                       Version 3, 29 June 2007
+/*                    GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007*/
 
 #include "e_girl.h"
 
@@ -44,6 +44,24 @@ char	*ft_strjoin(char *string, char *buff)
 	return (str);
 }
 
+int ft_getchar(void)
+{
+    static char buf[8192];
+    static char *bufp;
+    static int i;
+
+    bufp = buf;
+    i = 0;
+    if (i == 0)
+    {
+        i = read(0, buf, 1);
+        bufp = buf;
+    }
+    if (--i >= 0)
+        return  *bufp++;
+    return (-1);
+}
+
 char	*ft_gets(char *buf)
 {
 	int	count;
@@ -51,9 +69,9 @@ char	*ft_gets(char *buf)
 	//flockfile(stdin);
 	str = buf;
 	//while ((count = getchar_unlocked()) != '\n')
-	while ((count = getchar()) != '\n')
+	while ((count = ft_getchar()) != '\n')
 	{
-		if (count == EOF)
+		if (count == -1)
 			if (str == buf) {
 				//funlockfile(stdin);
 				return (NULL);
@@ -66,4 +84,3 @@ char	*ft_gets(char *buf)
 	//funlockfile(stdin);
 	return (buf);
 }
-

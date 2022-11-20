@@ -10,6 +10,7 @@
 # endif
 
 char	*e_girl(int fd);
+int	ft_getchar(void);
 char	*ft_gets(char *buf);
 char	*ft_read_and_create(int fd, char *str);
 size_t	ft_strlen(const char *str);

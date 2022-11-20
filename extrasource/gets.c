@@ -100,6 +100,30 @@ char	*ft_gets(char *buff)
 	return (buf);
 }*/
 
+/*char	*ft_gets(char *buf)
+{
+	int	count;
+	char	*str;
+	//flockfile(stdin);
+	str = buf;
+	//while ((count = getchar_unlocked()) != '\n')
+	while ((count = getchar()) != '\n')
+	{
+		if (count == EOF)
+			if (str == buf) {
+				//funlockfile(stdin);
+				return (NULL);
+			} else
+				break;
+		else
+			*str++ = count;
+	}
+	*str = '\0';
+	//funlockfile(stdin);
+	return (buf);
+}*/
+
+
 char	*ft_gets(char *buf)
 {
 	int	count;
